@@ -49,34 +49,35 @@ GitHub for version control
 Notion for documentation template
 
 
-USE CASE BIG PICTURE;
-CREATE VIEW gold.big_numbers AS
-select 'Total Sales' AS measure_name, sum(sales) as measure_value from gold.fact_sales
-UNION ALL
-select 'Total Quantity' AS measure_name, sum(quantity) as measure_value from gold.fact_sales
-UNION ALL
-select 'Average Sales Price' AS measure_name, avg(price) as measure_value from gold.fact_sales
-UNION ALL
-select 'Total Orders' AS measure_name, count(distinct order_number) as measure_value from gold.fact_sales
-UNION ALL
-select 'Total Products' AS measure_name, count(distinct product_key) as measure_value from gold.dim_products
-UNION ALL
-select 'Total Buying Customers' AS measure_name, count(distinct customer_key) as measure_value from gold.fact_sales
-UNION ALL
-select 'Total Customers' AS measure_name, count(distinct customer_id) as measure_value from gold.dim_customers
+* USE CASE BIG PICTURE<br>
+CREATE VIEW gold.big_numbers AS<br>
+select 'Total Sales' AS measure_name, sum(sales) as measure_value from gold.fact_sales<br>
+UNION ALL<br>
+select 'Total Quantity' AS measure_name, sum(quantity) as measure_value from gold.fact_sales<br>
+UNION ALL<br>
+select 'Average Sales Price' AS measure_name, avg(price) as measure_value from gold.fact_sales<br>
+UNION ALL<br>
+select 'Total Orders' AS measure_name, count(distinct order_number) as measure_value from gold.fact_sales<br>
+UNION ALL<br>
+select 'Total Products' AS measure_name, count(distinct product_key) as measure_value from gold.dim_products<br>
+UNION ALL<br>
+select 'Total Buying Customers' AS measure_name, count(distinct customer_key) as measure_value from gold.fact_sales<br>
+UNION ALL<br>
+select 'Total Customers' AS measure_name, count(distinct customer_id) as measure_value from gold.dim_customers<br>
+<br>
+select * from gold.big_numbers<br>
+<br>
+measure_name	measure_value<br>
+Total Sales	29356250<br>
+Total Quantity	60423<br>
+Average Sales Price	486<br>
+Total Orders	27659<br>
+Total Products	295<br>
+Total Buying Customers	18484<br>
+Total Customers	18484<br>
 
-select * from gold.big_numbers
-
-measure_name	measure_value
-Total Sales	29356250
-Total Quantity	60423
-Average Sales Price	486
-Total Orders	27659
-Total Products	295
-Total Buying Customers	18484
-Total Customers	18484
-
-
+<br>
+<br>
 
 
 🧠 Author
