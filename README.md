@@ -49,7 +49,7 @@ GitHub for version control
 Notion for documentation template
 
 
-* USE CASE BIG PICTURE<br>
+**USE CASE BIG PICTURE:**<br>
 CREATE VIEW gold.big_numbers AS<br>
 select 'Total Sales' AS measure_name, sum(sales) as measure_value from gold.fact_sales<br>
 UNION ALL<br>
