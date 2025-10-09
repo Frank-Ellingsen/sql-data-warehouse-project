@@ -48,5 +48,36 @@ GitHub for version control
 
 Notion for documentation template
 
+
+USE CASE BIG PICTURE;
+CREATE VIEW gold.big_numbers AS
+select 'Total Sales' AS measure_name, sum(sales) as measure_value from gold.fact_sales
+UNION ALL
+select 'Total Quantity' AS measure_name, sum(quantity) as measure_value from gold.fact_sales
+UNION ALL
+select 'Average Sales Price' AS measure_name, avg(price) as measure_value from gold.fact_sales
+UNION ALL
+select 'Total Orders' AS measure_name, count(distinct order_number) as measure_value from gold.fact_sales
+UNION ALL
+select 'Total Products' AS measure_name, count(distinct product_key) as measure_value from gold.dim_products
+UNION ALL
+select 'Total Buying Customers' AS measure_name, count(distinct customer_key) as measure_value from gold.fact_sales
+UNION ALL
+select 'Total Customers' AS measure_name, count(distinct customer_id) as measure_value from gold.dim_customers
+
+select * from gold.big_numbers
+
+measure_name	measure_value
+Total Sales	29356250
+Total Quantity	60423
+Average Sales Price	486
+Total Orders	27659
+Total Products	295
+Total Buying Customers	18484
+Total Customers	18484
+
+
+
+
 🧠 Author
 Frank Ellingsen
