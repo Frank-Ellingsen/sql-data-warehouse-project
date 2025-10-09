@@ -20,11 +20,33 @@ The pipeline follows the **Medallion Strategy**:
 
 Schemas are created as part of the initialization:
 
-```sql
-USE master;
-CREATE DATABASE DataWarehouse;
-USE DataWarehouse;
-CREATE SCHEMA bronze;
-CREATE SCHEMA silver;
-CREATE SCHEMA gold;
 
+📂 Source Systems
+CRM: Customer info, product catalog, sales details
+
+ERP: Customer demographics, location data, product categories
+
+CSV files are staged in the datasets/ folder and loaded via SQL scripts and stored procedures.
+
+Gold Layer
+Final views are created for:
+
+gold.dim_customers
+
+gold.dim_products
+
+gold.fact_sales
+
+These views support BI dashboards and KPI tracking
+
+📌 Tools & Tech
+SQL Server
+
+QuickDBD (ERD modeling)
+
+GitHub for version control
+
+Notion for documentation template
+
+🧠 Author
+Frank Ellingsen
