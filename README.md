@@ -96,6 +96,17 @@ tot_sales	country<br>
 1977738	Canada<br>
 226820	n/a<br>
 <br>
+select sum(gfs.sales) as tot_sales,<br>
+gdp.category<br>
+from gold.fact_sales gfs<br>
+	left join gold.dim_products gdp<br>
+		on gfs.product_key = gdp.product_row_id<br>
+group by gdp.category<br>
+order by 1 desc<br>
 
+tot_sales	category<br>
+28316272	Bikes<br>
+700262	Accessories<br>
+339716	Clothing<br>
 Author<br>
 Frank Ellingsen
