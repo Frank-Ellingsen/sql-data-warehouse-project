@@ -78,7 +78,22 @@ Total Customers	18484<br>
 
 <br>
 <br>
+select sum(gfs.sales) as tot_sales,<br>
+gdc.country<br>
+from gold.fact_sales gfs<br>
+	left join gold.dim_customers gdc<br>
+		on gfs.customer_key = gdc.customer_id<br>
+group by gdc.country<br>
+order by 1 desc<br>
 
+tot_sales	country<br>
+9162327	United States<br>
+9060172	Australia<br>
+3391376	United Kingdom<br>
+2894066	Germany<br>
+2643751	France<br>
+1977738	Canada<br>
+226820	n/a<br>
 
-🧠 Author
+Author<br>
 Frank Ellingsen
