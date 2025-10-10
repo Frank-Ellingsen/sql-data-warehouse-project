@@ -87,7 +87,7 @@ group by gdc.country<br>
 order by 1 desc<br>
 <br>
 
-tot_sales	country<br>
+tot_sales_by_country<br>
 9162327	United States<br>
 9060172	Australia<br>
 3391376	United Kingdom<br>
@@ -104,9 +104,10 @@ from gold.fact_sales gfs<br>
 group by gdp.category<br>
 order by 1 desc<br>
 
-tot_sales	category<br>
+tot_sales_by_category<br>
 28316272	Bikes<br>
 700262	Accessories<br>
 339716	Clothing<br>
+<br>
 Author<br>
 Frank Ellingsen
